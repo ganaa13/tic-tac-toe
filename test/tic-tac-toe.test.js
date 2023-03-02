@@ -15,4 +15,17 @@ describe('TicTacToe', () => {
             expect(game.player).toBe(PLAYER_X);
         });
     });
+    describe('Game Play', () => {
+        beforeEach(() => {
+            [row,col] = game.getNextEmptyLocation();
+        });
+        test('should generate next empty location', () => {
+            expect(game.board[row][col]).toBe('');
+        });
+        test('should place current player-s symbol in new found location', () => {
+            const currentPlayer = game.player;
+            game.markPosition(row,col);
+            expect(game.board[row][col]).toBe(currentPlayer); 
+        });
+    });
 });

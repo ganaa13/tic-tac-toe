@@ -29,6 +29,11 @@ class TicTacToe {
         return [Math.floor(Math.random() * SIZE),Math.floor(Math.random() * SIZE)];
     }
 
+    markPosition(){
+        this.board[row][col] = this.player;
+        
+    }
+
 }
 
 module.exports = {
