@@ -16,6 +16,19 @@ class TicTacToe {
     createGameBoard(){
         return Array(SIZE).fill().map(() => Array(SIZE).fill(''));
     }
+
+    getNextEmptyLocation(){
+        let [newRow,newCol] = this.getNewRandomLocation();
+        while(this.board[newRow][newCol] !== ''){
+            [newRow,newCol] = this.getNewRandomLocation();
+        }
+
+        return [newRow,newCol];
+    }
+    getNewRandomLocation(){
+        return [Math.floor(Math.random() * SIZE),Math.floor(Math.random() * SIZE)];
+    }
+
 }
 
 module.exports = {
