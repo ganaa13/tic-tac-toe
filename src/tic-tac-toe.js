@@ -31,7 +31,12 @@ class TicTacToe {
 
     markPosition(){
         this.board[row][col] = this.player;
-        
+        this.switchPlayer();
+    }
+
+    switchPlayer(){
+        if(this.player === PLAYER_X) {this.player = PLAYER_O;}
+        else {this.player = PLAYER_X};
     }
 
 }

@@ -26,6 +26,8 @@ describe('TicTacToe', () => {
             const currentPlayer = game.player;
             game.markPosition(row,col);
             expect(game.board[row][col]).toBe(currentPlayer); 
+            expect(game.player).not.toEqual(currentPlayer);
         });
+        
     });
 });
