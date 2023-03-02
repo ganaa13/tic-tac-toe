@@ -39,6 +39,20 @@ class TicTacToe {
         else {this.player = PLAYER_X};
     }
 
+    wonVertically(){
+        const TOP = 0;
+        const MIDDLE = 1;
+        const BOTTOM = 2;
+
+        for(let i = 0; i < SIZE; i++){
+            if(this.board[TOP][i] !== '' || this.board[TOP][i] === this.board[MIDDLE][i] && this.board[MIDDLE][i] === this.board[BOTTOM][i]){
+                this.winner = this.board[TOP][i];
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
 module.exports = {

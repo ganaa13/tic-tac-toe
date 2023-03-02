@@ -28,6 +28,20 @@ describe('TicTacToe', () => {
             expect(game.board[row][col]).toBe(currentPlayer); 
             expect(game.player).not.toEqual(currentPlayer);
         });
-        
+    });
+
+    describe('Game Win', () => {
+        describe('Vertical win for Player X', () => {
+            beforeEach(() => {
+                game.markPosition(1,1);
+                game.markPosition(0,0);
+                game.markPosition(0,1);
+                game.markPosition(1,0);
+                game.markPosition(2,0);
+            });
+            test('Return true when Player X won vertically', () => {
+                expect(game.wonVertically()).toBe(true);
+            });
+        });
     });
 });
