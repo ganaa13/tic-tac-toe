@@ -77,5 +77,21 @@ describe('TicTacToe', () => {
                 expect(game.isGameOver()).toBe(true);
             });
         });
+        describe('Horizontal win for Player O', () => {
+            beforeEach(() => {
+                game.markPosition(0,0);
+                game.markPosition(0,1);
+                game.markPosition(2,0);
+                game.markPosition(1,1);
+                game.markPosition(2,2);
+                game.markPosition(2,1);
+            });
+            test('Return true when Player O wins Horizontally', () => {
+                expect(game.wonHorizontally()).toBe(true);
+            });
+            test('Return true if game is over', () => {
+                expect(game.isGameOver()).toBe(true);
+            });
+        });
     });
 });
