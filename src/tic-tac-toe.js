@@ -52,9 +52,21 @@ class TicTacToe {
         }
         return false;
     }
+    wonHorizontally(){
+        const LEFT = 0;
+        const MIDDLE = 1;
+        const RIGHT = 2;
 
+        for(let i = 0; i<SIZE;i++){
+            if(this.board[i][LEFT] !== '' || this.board[i][LEFT] === this.board[i][MIDDLE] && this.board[i][MIDDLE] === this.board[i][RIGHT]){
+                this.winner = this.board[i][LEFT];
+                return true;
+            }
+        }
+        return false;
+    }
     isGameOver(){
-        if(this.wonVertically()) {
+        if(this.wonVertically() || this.wonHorizontally) {
             return true;
         }
         return false;
