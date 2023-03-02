@@ -53,6 +53,13 @@ class TicTacToe {
         return false;
     }
 
+    isGameOver(){
+        if(this.wonVertically()) {
+            return true;
+        }
+        return false;
+    }
+
 }
 
 module.exports = {

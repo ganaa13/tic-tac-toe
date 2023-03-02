@@ -42,6 +42,25 @@ describe('TicTacToe', () => {
             test('Return true when Player X won vertically', () => {
                 expect(game.wonVertically()).toBe(true);
             });
+            test('Should return true if game is over', () => {
+                expect(game.isGameOver()).toBe(true);
+            });
+        });
+        describe('Vertical win for Player O', () => {
+            beforeEach(() => {
+                game.markPosition(0,0);
+                game.markPosition(1,1);
+                game.markPosition(0,1);
+                game.markPosition(1,0);
+                game.markPosition(2,2);
+                game.markPosition(2,0);
+            });
+            test('Return true when Player O wins vertically', () => {
+                expect(game.wonVertically()).toBe(true);
+            });
+            test('Should return true when game is over',() => {
+                expect(game.isGameOver()).toBe(true);
+            });
         });
     });
 });
